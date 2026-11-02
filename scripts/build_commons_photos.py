@@ -70,7 +70,7 @@ def api_search(query: str) -> list[dict]:
         "gsrnamespace": 6,
         "gsrlimit": 50,
         "prop": "imageinfo",
-        "iiprop": "url|size|extmetadata",
+        "iiprop": "url|size|mime|extmetadata",
         "iiurlwidth": 3840,
         "format": "json",
         "formatversion": 2,
