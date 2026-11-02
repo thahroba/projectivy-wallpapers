@@ -189,7 +189,7 @@ def main() -> int:
         aerial_assets.append(asset)
 
     AERIAL_PATH.write_text(
-        json.dumps({"assets": aerial_assets}, ensure_ascii=False, indent=2) + "\\n",
+        json.dumps({"assets": aerial_assets}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
