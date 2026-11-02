@@ -19,6 +19,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "wallpapers.json"
 AERIAL_PATH = ROOT / "aerial-entries.json"
+AERIAL_EXTRA_PATH = ROOT / "aerial-extra-assets.json"
 CACHE_PATH = ROOT / "pixabay-cache.json"
 API_URL = "https://pixabay.com/api/videos/"
 API_KEY = os.environ.get("PIXABAY_API_KEY", "").strip()
@@ -198,6 +199,29 @@ def main() -> int:
             asset["url-4K-SDR"] = video_4k
         aerial_assets.append(asset)
 
+    extra_assets = read_json(AERIAL_EXTRA_PATH, [])
+    known_urls = {
+        asset.get(key)
+        for asset in aerial_assets
+        for key in ("url-4K-SDR", "url-4K-HDR", "url-1080-SDR", "url-1080-H264", "url-1080-HDR")
+        if asset.get(key)
+    }
+    extra_added = 0
+    if isinstance(extra_assets, list):
+        for asset in extra_assets:
+            if len(aerial_assets) >= AERIAL_MAX_ITEMS:
+                break
+            asset_urls = [
+                asset.get(key)
+                for key in ("url-4K-SDR", "url-4K-HDR", "url-1080-SDR", "url-1080-H264", "url-1080-HDR")
+                if asset.get(key)
+            ]
+            if not asset_urls or all(url in known_urls for url in asset_urls):
+                continue
+            aerial_assets.append(asset)
+            known_urls.update(asset_urls)
+            extra_added += 1
+
     AERIAL_PATH.write_text(
         json.dumps({"assets": aerial_assets}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -213,7 +237,7 @@ def main() -> int:
     )
     pixabay_count = sum(1 for item in output[:MAX_ITEMS] if item.get("provider") == "Pixabay")
     print(f"Wallpaper list now has {min(len(output), MAX_ITEMS)} entries ({pixabay_count} from Pixabay).")
-    print(f"Aerial Views feed now has {len(aerial_assets)} entries.")
+    print(f"Aerial Views feed now has {len(aerial_assets)} entries ({extra_added} curated additions).")
     if len(output) < MAX_ITEMS:
         print("Pixabay returned fewer than 1000 eligible unique clips; the script did not create duplicates.")
     return 0
