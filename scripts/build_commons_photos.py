@@ -143,7 +143,7 @@ def main() -> int:
         except (TypeError, ValueError):
             fetched_at = datetime.min.replace(tzinfo=timezone.utc)
 
-        if now - fetched_at < CACHE_TTL and isinstance(cached.get("hits"), list):
+        if now - fetched_at < CACHE_TTL and isinstance(cached.get("hits"), list) and cached.get("hits"):
             fresh_results[query] = cached["hits"]
             continue
 
