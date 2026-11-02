@@ -3371,7 +3371,7 @@
       ]
     },
     "Arabic calligraphy Persian poetry": {
-      "fetched_at": "2026-11-02T03:23:20.232367+00:00",
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
       "hits": []
     },
     "Barcelona Messi football": {
@@ -5102,11 +5102,11 @@
       ]
     },
     "Farqad al-Qazwini": {
-      "fetched_at": "2026-11-02T03:23:20.232367+00:00",
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
       "hits": []
     },
     "Kamal al-Haidari": {
-      "fetched_at": "2026-11-02T03:23:20.232367+00:00",
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
       "hits": []
     },
     "Mansur al-Hallaj": {
@@ -5434,6 +5434,65 @@
           "author": "Amir Pashaei",
           "license_name": "CC BY-SA 4.0",
           "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    "السيد مقتدى الصدر": {
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
+      "hits": [
+        {
+          "file_title": "Moqtada al-Sader 2019 Tehéran.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Moqtada_al-Sader_2019_Teh%C3%A9ran.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Moqtada_al-Sader_2019_Teh%C3%A9ran.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Moqtada_al-Sader_2019_Teh%C3%A9ran.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 2600,
+          "height": 1733,
+          "author": "Unknown author Unknown author",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "file_title": "Ali Khamenei et Moqtada Sader.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Ali_Khamenei_et_Moqtada_Sader.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Ali_Khamenei_et_Moqtada_Sader.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Ali_Khamenei_et_Moqtada_Sader.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 2600,
+          "height": 1733,
+          "author": "Unknown author Unknown author",
+          "license_name": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        }
+      ]
+    },
+    "Saddam Hussein court trial 2004": {
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
+      "hits": [
+        {
+          "file_title": "SaddamHussein in court 2004July01 DF-SD-05-03944.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 3008,
+          "height": 1960,
+          "author": "SSGT D. MYLES CULLEN, USAF",
+          "license_name": "Public domain",
+          "license_url": ""
+        }
+      ]
+    },
+    "SaddamHussein in court 2004": {
+      "fetched_at": "2026-11-02T03:26:49.284669+00:00",
+      "hits": [
+        {
+          "file_title": "SaddamHussein in court 2004July01 DF-SD-05-03944.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+          "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/SaddamHussein_in_court_2004July01_DF-SD-05-03944.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "width": 3008,
+          "height": 1960,
+          "author": "SSGT D. MYLES CULLEN, USAF",
+          "license_name": "Public domain",
+          "license_url": ""
         }
       ]
     }
