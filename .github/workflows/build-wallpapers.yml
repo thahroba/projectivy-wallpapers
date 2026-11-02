@@ -24,7 +24,7 @@ jobs:
           if git diff --quiet; then
             echo "No changes to save."
           else
-            git add wallpapers.json pixabay-cache.json
-            git commit -m "Build wallpaper list from Pixabay"
+            git add wallpapers.json pixabay-cache.json aerial-entries.json
+            git commit -m "Build wallpaper feeds from Pixabay"
             git push
           fi
