@@ -18,10 +18,12 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "wallpapers.json"
+AERIAL_PATH = ROOT / "aerial-entries.json"
 CACHE_PATH = ROOT / "pixabay-cache.json"
 API_URL = "https://pixabay.com/api/videos/"
 API_KEY = os.environ.get("PIXABAY_API_KEY", "").strip()
 MAX_ITEMS = 1000
+AERIAL_MAX_ITEMS = 5000
 CACHE_TTL = timedelta(hours=24)
 
 # Wide, safe-for-work search terms cover the topics requested. Pixabay has
@@ -166,10 +168,30 @@ def main() -> int:
                 entry["url_1080p"] = medium_url
             seen_ids.add(video_id)
             output.append(entry)
-            if len(output) >= MAX_ITEMS:
-                break
-        if len(output) >= MAX_ITEMS:
-            break
+
+    aerial_assets = []
+    for index, item in enumerate(output[:AERIAL_MAX_ITEMS], start=1):
+        video_4k = item.get("url_4k")
+        video_1080p = item.get("url_1080p")
+        if not video_4k and not video_1080p:
+            continue
+        label_parts = [str(item.get(key, "")).strip() for key in ("location", "title", "author")]
+        label = " — ".join(part for part in label_parts if part)
+        asset = {
+            "id": f"projectivy-wallpaper-{index:04d}",
+            "accessibilityLabel": label or f"Video {index}",
+            "type": "aerial",
+        }
+        if video_1080p:
+            asset["url-1080-SDR"] = video_1080p
+        if video_4k:
+            asset["url-4K-SDR"] = video_4k
+        aerial_assets.append(asset)
+
+    AERIAL_PATH.write_text(
+        json.dumps({"assets": aerial_assets}, ensure_ascii=False, indent=2) + "\\n",
+        encoding="utf-8",
+    )
 
     CACHE_PATH.write_text(
         json.dumps({"queries": cached_queries}, ensure_ascii=False, indent=2) + "\n",
@@ -181,6 +203,7 @@ def main() -> int:
     )
     pixabay_count = sum(1 for item in output[:MAX_ITEMS] if item.get("provider") == "Pixabay")
     print(f"Wallpaper list now has {min(len(output), MAX_ITEMS)} entries ({pixabay_count} from Pixabay).")
+    print(f"Aerial Views feed now has {len(aerial_assets)} entries.")
     if len(output) < MAX_ITEMS:
         print("Pixabay returned fewer than 1000 eligible unique clips; the script did not create duplicates.")
     return 0
