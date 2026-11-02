@@ -49,6 +49,16 @@ SEARCHES = [
     ("video games gaming", "ألعاب | ألعاب فيديو"),
     ("rain window cozy", "طبيعة | أجواء المطر"),
     ("sunset beach", "طبيعة | غروب وشواطئ"),
+    ("Babylon Mesopotamia ancient ruins", "حضارة | بابل وبلاد الرافدين"),
+    ("Tigris river Baghdad Iraq", "العراق | دجلة وبغداد"),
+    ("holy shrine mosque golden dome", "أماكن مقدسة | مراقد وقباب"),
+    ("underwater coral reef fish", "طبيعة | أعماق البحار"),
+    ("aurora northern lights night sky", "طبيعة | الشفق القطبي"),
+    ("birds wildlife flying", "حيوانات | طيور وحياة برية"),
+    ("Barcelona soccer stadium football", "رياضة | برشلونة وكرة القدم"),
+    ("robotics artificial intelligence robot", "تقنية | الروبوتات والذكاء الاصطناعي"),
+    ("cyberpunk neon city skyline", "تقنية | مدن مستقبلية"),
+    ("supercar sports car night", "سيارات | سيارات رياضية"),
 ]
 
 def read_json(path: Path, fallback):
